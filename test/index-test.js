@@ -3,6 +3,8 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import moment from 'moment'
 import App from '../src/App'
+import ExampleComponent from '../src/ExampleComponent'
+import TestComponent from '../src/TestComponent'
 
 import Enzyme, { shallow } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
@@ -22,11 +24,11 @@ describe('App', () => {
   });
 
   it('should include the ExampleComponent', () => {
-    expect(wrapper.text()).to.include('<ExampleComponent />')
+    expect(wrapper.find(ExampleComponent).exists()).to.be.true
   });
 
   it('should include the TestComponent', () => {
-    expect(wrapper.text()).to.include('<TestComponent />')
+    expect(wrapper.find(TestComponent).exists()).to.be.true
   });
 });
 
